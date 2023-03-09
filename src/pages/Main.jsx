@@ -2,6 +2,7 @@ import React from "react";
 import Newpost from "../components/Newpost";
 import Menubar from "../components/Menubar";
 import Recommendation from "../components/Recommendation";
+import Post from "../components/Post";
 const Main = () => {
   return (
     <main className="main">
@@ -11,6 +12,7 @@ const Main = () => {
         </div>
         <div className="content">
           <Newpost />
+          <Post />
         </div>
         <div className="recommendation">
           <Recommendation />
