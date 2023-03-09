@@ -1,4 +1,5 @@
 import UserImg from "./UserImg";
+import { IoMdAdd } from "react-icons/io";
 const Recommendation = () => {
   return (
     <div className="cardRecommendation">
@@ -14,6 +15,7 @@ const Recommendation = () => {
               fugit!
             </p>
             <button className="btn" id="follow">
+              <IoMdAdd />
               Follow
             </button>
           </div>
@@ -27,6 +29,7 @@ const Recommendation = () => {
               fugit!
             </p>
             <button className="btn" id="follow">
+              <IoMdAdd />
               Follow
             </button>
           </div>
@@ -40,6 +43,7 @@ const Recommendation = () => {
               fugit!
             </p>
             <button className="btn" id="follow">
+              <IoMdAdd />
               Follow
             </button>
           </div>

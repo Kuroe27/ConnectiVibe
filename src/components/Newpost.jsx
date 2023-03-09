@@ -1,5 +1,8 @@
 import UserImg from "./UserImg";
-import { GoGlobe } from "react-icons/go";
+import { GoGlobe, GoFileMedia, GoLocation } from "react-icons/go";
+import { BsEmojiSmile } from "react-icons/bs";
+import { FaVine } from "react-icons/fa";
+
 const Newpost = () => {
   return (
     <div className="newPost">
@@ -19,15 +22,15 @@ const Newpost = () => {
       </form>
       <div className="newpostFooter">
         <button className="button">
-          <i className="fa-regular fa-images"></i>
+          <GoFileMedia />
           <span>Media</span>{" "}
         </button>
         <button className="button">
-          <i className="fa fa-location-dot"></i>
+          <GoLocation />
           <span>Location</span>
         </button>
         <button className="button">
-          <i className="fa-regular fa-face-smile"></i>
+          <BsEmojiSmile />
           <span>Emoji</span>
         </button>
         <button className="button" id="buttonpost">
