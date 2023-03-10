@@ -3,7 +3,8 @@ import Newpost from "../components/Newpost";
 import Menubar from "../components/Menubar";
 import Recommendation from "../components/Recommendation";
 import Post from "../components/Post";
-const Main = () => {
+
+const Main = ({ posts, onDelete }) => {
   return (
     <main className="main">
       <div className="container">
@@ -12,7 +13,11 @@ const Main = () => {
         </div>
         <div className="content">
           <Newpost />
-          <Post />
+          {posts.length > 0 ? (
+            <Post posts={posts} onDelete={onDelete} />
+          ) : (
+            "nothing"
+          )}
         </div>
         <div className="recommendation">
           <Recommendation />
