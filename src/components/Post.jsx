@@ -1,4 +1,5 @@
 import PostContainer from "./PostContainer";
+
 const Post = ({ posts, onDelete }) => {
   return (
     <>

@@ -1,8 +1,9 @@
 import React from "react";
 import UserImg from "./UserImg";
-import { FaVine, FaTimes } from "react-icons/fa";
+import { FaVine } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
 import { TbShare3 } from "react-icons/tb";
+import { GrFormClose } from "react-icons/gr";
 
 const PostContainer = ({ post, onDelete }) => {
   return (
@@ -12,21 +13,15 @@ const PostContainer = ({ post, onDelete }) => {
         <div className="headerInfo">
           <h3>Jhon Test</h3>
         </div>
-        <FaTimes
+        <GrFormClose
           className="btn"
           id="deletePost"
           onClick={() => onDelete(post.id)}
         />
       </div>
       <div className="postText">
-        <h3>{post.text}</h3>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse sunt
-          quibusdam autem veritatis mollitia blanditiis aspernatur, unde
-          excepturi maxime harum doloribus ducimus dolorem! Molestias sit amet
-          commodi recusandae soluta minima fugit ab, sapiente ut veniam eveniet,
-          laborum maiores, modi iure.
-        </p>
+        <p>{post.text}</p>
+        <p></p>
       </div>
       <div className="postFooter">
         <button className="btn">

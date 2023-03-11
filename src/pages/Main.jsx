@@ -4,7 +4,7 @@ import Menubar from "../components/Menubar";
 import Recommendation from "../components/Recommendation";
 import Post from "../components/Post";
 
-const Main = ({ posts, onDelete }) => {
+const Main = ({ posts, onDelete, onAdd }) => {
   return (
     <main className="main">
       <div className="container">
@@ -12,7 +12,7 @@ const Main = ({ posts, onDelete }) => {
           <Menubar />
         </div>
         <div className="content">
-          <Newpost />
+          <Newpost onAdd={onAdd} />
           {posts.length > 0 ? (
             <Post posts={posts} onDelete={onDelete} />
           ) : (
