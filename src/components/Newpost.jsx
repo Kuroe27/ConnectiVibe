@@ -11,6 +11,22 @@ const Newpost = ({ onAdd }) => {
     e.preventDefault();
     onAdd({ text });
   };
+
+  const onMediaClick = (e) => {
+    e.preventDefault();
+    // do something when Media button is clicked
+  };
+
+  const onLocationClick = (e) => {
+    e.preventDefault();
+    // do something when Location button is clicked
+  };
+
+  const onEmojiClick = (e) => {
+    e.preventDefault();
+    // do something when Emoji button is clicked
+  };
+
   return (
     <div className="newPost">
       <div className="newpostHeader">
@@ -30,15 +46,15 @@ const Newpost = ({ onAdd }) => {
         ></textarea>
 
         <div className="newpostFooter">
-          <button className="button">
+          <button className="button" onClick={onMediaClick}>
             <GoFileMedia />
             <span>Media</span>{" "}
           </button>
-          <button className="button">
+          <button className="button" onClick={onLocationClick}>
             <GoLocation />
             <span>Location</span>
           </button>
-          <button className="button">
+          <button className="button" onClick={onEmojiClick}>
             <BsEmojiSmile />
             <span>Emoji</span>
           </button>
