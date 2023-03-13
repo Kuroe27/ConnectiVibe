@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import Navbar from "./components/Navbar";
 import Main from "./pages/Main";
 
@@ -7,21 +6,21 @@ function App() {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
-    const getPost = async () => {
-      const postFromServer = await fetchPost();
-      setPost(postFromServer);
-    };
-    getPost();
+    const storedPost = JSON.parse(localStorage.getItem("post"));
+    if (storedPost) {
+      setPost(storedPost);
+    } else {
+      fetchPost();
+    }
   }, []);
 
-  //fetch task
   const fetchPost = async () => {
     const res = await fetch("http://localhost:5000/post");
     const data = await res.json();
-    return data;
+    setPost(data);
+    localStorage.setItem("post", JSON.stringify(data));
   };
 
-  //add post
   const addPost = async (newPost) => {
     const res = await fetch("http://localhost:5000/post", {
       method: "POST",
@@ -32,15 +31,18 @@ function App() {
     });
     const data = await res.json();
     setPost([...post, data]);
+    localStorage.setItem("post", JSON.stringify([...post, data]));
   };
 
-  //delete post
   const deletePost = async (id) => {
     await fetch(`http://localhost:5000/post/${id}`, {
       method: "DELETE",
     });
-
     setPost(post.filter((post) => post.id !== id));
+    localStorage.setItem(
+      "post",
+      JSON.stringify(post.filter((post) => post.id !== id))
+    );
   };
 
   return (
